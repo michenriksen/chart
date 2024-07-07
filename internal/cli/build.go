@@ -9,7 +9,7 @@ import (
 
 var buildInfo *debug.BuildInfo
 
-var version = "0.1.0"
+var version = "0.1.1"
 
 // Version returns the current version of the CLI application.
 func Version() string {

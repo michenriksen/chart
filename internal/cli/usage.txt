@@ -1,7 +1,3 @@
-exec chart --help
-cmp stderr golden.txt
-
--- golden.txt --
 DESCRIPTION
   Render bar charts from file contents and command output in various formats.
 
@@ -9,12 +5,12 @@ USAGE:
   chart [OPTIONS]
 
 OPTIONS:
-  -p, --precision INT    Precision for values (default: 80)
+  -p, --precision INT    Precision for values (default: %d)
   -c, --count            Count line occurrences
   -d, --desc             Sort chart in descending order
   -i, --in FILE          Read data from file instead of stdin
-  -l, --length INT       Set maximum chart length (default: 20)
-  -L, --label-length INT Set maximum label length (default: 2)
+  -l, --length INT       Set maximum chart length (default: %d)
+  -L, --label-length INT Set maximum label length (default: %d)
   -m, --mermaid          Create Mermaid XYChart
   -C, --chartjs          Create Chart.js configuration
   -o, --out FILE         Write to file instead of stdout (overwrites contents)

@@ -1,6 +1,7 @@
 package cli
 
 import (
+	_ "embed"
 	"errors"
 	"flag"
 	"fmt"
@@ -19,49 +20,8 @@ const (
 	defaultSort           = "none"
 )
 
-const Usage = `DESCRIPTION
-  Render bar charts from file contents and command output in various formats.
-
-USAGE:
-  chart [OPTIONS]
-
-OPTIONS:
-	-p, --precision INT    Precision for values (default: %d)
-  -c, --count            Count line occurrences
-  -d, --desc             Sort chart in descending order
-  -i, --in FILE          Read data from file instead of stdin
-  -l, --length INT       Set maximum chart length (default: %d)
-  -L, --label-length INT Set maximum label length (default: %d)
-  -m, --mermaid          Create Mermaid XYChart
-	-C, --chartjs          Create Chart.js configuration
-  -o, --out FILE         Write to file instead of stdout (overwrites contents)
-  -s, --sort SORT        Sort chart; see SORT OPTIONS below
-  -t, --tick CHAR        Use specified character for drawing bars
-	-T, --title TITLE      Chart title (Mermaid).
-	-v, --version          Display version information and exit
-
-SORT OPTIONS:
-	none:     Keep order of insertion (default)
-  label:    Alphabetically sort bars by label
-  labelnum: Numerically sort bars by label
-  value:    Numerically sort bars by value
-
-EXAMPLES:
-  # Chart 'uniq -c' command output:
-  $ cat data.txt | sort | uniq -c | chart
-
-  # Chart contents of file by counting lines:
-  $ chart --in data.txt --count
-
-  # Sort chart by value in descending order:
-  $ cat data.txt | chart --count --sort value --desc
-
-	# Generate a Mermaid XYChart:
-	$ cat data.txt | chart --mermaid
-
-	# Generate a Chart.js configuration:
-	$ cat data.txt | chart --chartjs
-`
+//go:embed usage.txt
+var usage string
 
 var sortOptMap = map[string]chart.SortOption{
 	"none":     chart.SortNone,
@@ -186,7 +146,7 @@ func printUsage(err error) {
 		fmt.Fprintf(os.Stderr, "Error: %v\n\n", err)
 	}
 
-	fmt.Fprintf(os.Stderr, Usage, defaultMaxLength, defaultMaxLabelLength, defaultPrecision)
+	fmt.Fprintf(os.Stderr, usage, defaultMaxLength, defaultMaxLabelLength, defaultPrecision)
 }
 
 func boolFlag(flagset *flag.FlagSet, p *bool, name, short string, value bool, usage string) { //nolint:revive // acceptable arg count.

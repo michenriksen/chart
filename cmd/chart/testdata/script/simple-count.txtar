@@ -1,0 +1,27 @@
+stdin input.txt
+exec chart --count
+cmp stdout golden.txt
+
+-- input.txt --
+Four
+Two
+Three
+Five
+Five
+Five
+Four
+Two
+Five
+Five
+Four
+Four
+Three
+Three
+One
+
+-- golden.txt --
+ Four ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 4
+  Two ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 2
+Three ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 3
+ Five ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 5
+  One ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1

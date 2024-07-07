@@ -1,0 +1,26 @@
+exec chart -i examples/count-occurrences.txt --count
+cmp stdout golden.txt
+
+-- examples/count-occurrences.txt --
+Three
+Two
+Four
+Five
+Four
+One
+Three
+Three
+Five
+Two
+Five
+Four
+Five
+Four
+Five
+
+-- golden.txt --
+Three ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 3
+  Two ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 2
+ Four ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 4
+ Five ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 5
+  One ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1

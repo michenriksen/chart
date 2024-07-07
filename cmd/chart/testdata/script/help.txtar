@@ -1,0 +1,46 @@
+exec chart --help
+cmp stderr golden.txt
+
+-- golden.txt --
+DESCRIPTION
+  Render bar charts from file contents and command output in various formats.
+
+USAGE:
+  chart [OPTIONS]
+
+OPTIONS:
+	-p, --precision INT    Precision for values (default: 80)
+  -c, --count            Count line occurrences
+  -d, --desc             Sort chart in descending order
+  -i, --in FILE          Read data from file instead of stdin
+  -l, --length INT       Set maximum chart length (default: 20)
+  -L, --label-length INT Set maximum label length (default: 2)
+  -m, --mermaid          Create Mermaid XYChart
+	-C, --chartjs          Create Chart.js configuration
+  -o, --out FILE         Write to file instead of stdout (overwrites contents)
+  -s, --sort SORT        Sort chart; see SORT OPTIONS below
+  -t, --tick CHAR        Use specified character for drawing bars
+	-T, --title TITLE      Chart title (Mermaid).
+	-v, --version          Display version information and exit
+
+SORT OPTIONS:
+	none:     Keep order of insertion (default)
+  label:    Alphabetically sort bars by label
+  labelnum: Numerically sort bars by label
+  value:    Numerically sort bars by value
+
+EXAMPLES:
+  # Chart 'uniq -c' command output:
+  $ cat data.txt | sort | uniq -c | chart
+
+  # Chart contents of file by counting lines:
+  $ chart --in data.txt --count
+
+  # Sort chart by value in descending order:
+  $ cat data.txt | chart --count --sort value --desc
+
+	# Generate a Mermaid XYChart:
+	$ cat data.txt | chart --mermaid
+
+	# Generate a Chart.js configuration:
+	$ cat data.txt | chart --chartjs

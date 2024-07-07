@@ -1,0 +1,27 @@
+stdin input.txt
+exec chart --label-length 10
+cmp stdout golden.txt
+
+-- input.txt --
+1500 Page Views
+320 New Users
+75 Sales
+45 Support Tickets
+600 Emails Sent
+2300 Clicks
+125 Subscriptions
+40 Refunds
+780 Downloads
+90 Feedbacks
+
+-- golden.txt --
+Page Views ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1500
+ New Users ▇▇▇▇▇▇▇▇▇ 320
+     Sales ▇▇ 75
+ Sup...ets ▇ 45
+ Ema...ent ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 600
+    Clicks ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 2300
+ Sub...ons ▇▇▇ 125
+   Refunds ▇ 40
+ Downloads ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 780
+ Feedbacks ▇▇▇ 90

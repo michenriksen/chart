@@ -1,0 +1,26 @@
+exec chart -i examples/statistics.txt --scale
+cmp stdout golden.txt
+
+-- examples/statistics.txt --
+1.2    Sales leads
+3.8    Conversion rate
+12.6   Monthly subs
+34.9   Quarterly revenue
+79.4   Client meetings
+158.2  Product launches
+367.1  Employees
+952.5  Support calls
+2764.8 Website traffic
+7360.4 Marketing budget
+
+-- golden.txt --
+      Sales leads ▇▇▇▇▇ 1.2
+  Conversion rate ▇▇▇▇▇▇▇▇▇▇ 3.8
+     Monthly subs ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 12.6
+Quarterly revenue ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 34.9
+  Client meetings ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 79.4
+ Product launches ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 158.2
+        Employees ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 367.1
+    Support calls ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 952.5
+  Website traffic ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 2764.8
+ Marketing budget ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 7360.4

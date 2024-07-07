@@ -1,0 +1,10 @@
+1.2    Sales leads
+3.8    Conversion rate
+12.6   Monthly subs
+34.9   Quarterly revenue
+79.4   Client meetings
+158.2  Product launches
+367.1  Employees
+952.5  Support calls
+2764.8 Website traffic
+7360.4 Marketing budget

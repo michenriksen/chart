@@ -1,0 +1,25 @@
+exec chart -i examples/count-occurrences.txt --count --sort value --mermaid --title 'Occurrences'
+cmp stdout golden.txt
+
+-- examples/count-occurrences.txt --
+Three
+Two
+Four
+Five
+Four
+One
+Three
+Three
+Five
+Two
+Five
+Four
+Five
+Four
+Five
+
+-- golden.txt --
+xychart-beta
+  title "Occurrences"
+  x-axis ["One", "Two", "Three", "Four", "Five"]
+  bar [1, 2, 3, 4, 5]

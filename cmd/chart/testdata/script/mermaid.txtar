@@ -1,0 +1,18 @@
+stdin input.txt
+exec chart --precision 2 --sort value --desc --mermaid
+cmp stdout golden.txt
+
+-- input.txt --
+75.234567   Time (s)
+45.678901   Rate (%)
+600.456789  Revenue ($)
+2300.654321 CPC ($)
+125.123456  AOV ($)
+40.987654   Bounce (%)
+1500.123456 Retention (%)
+320.987654  ROI (%)
+
+-- golden.txt --
+xychart-beta
+  x-axis ["CPC ($)", "Retention (%)", "Revenue ($)", "ROI (%)", "AOV ($)", "Time (s)", "Rate (%)", "Bounce (%)"]
+  bar [2300.65, 1500.12, 600.46, 320.99, 125.12, 75.23, 45.68, 40.99]

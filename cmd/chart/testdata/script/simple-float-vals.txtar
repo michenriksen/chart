@@ -1,0 +1,27 @@
+stdin input.txt
+exec chart --precision 2 --sort value --desc
+cmp stdout golden.txt
+
+-- input.txt --
+75.234567   Average Time on Page
+45.678901   Conversion Rate
+600.456789  Revenue
+2300.654321 Cost Per Click
+125.123456  Average Order Value
+40.987654   Bounce Rate
+780.345678  Click-Through Rate
+90.543210   Customer Satisfaction Score
+1500.123456 User Retention Rate
+320.987654  Return on Investment
+
+-- golden.txt --
+      Cost Per Click ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 2300.65
+ User Retention Rate ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 1500.12
+  Click-Through Rate ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 780.35
+             Revenue ▇▇▇▇▇▇▇▇▇▇▇▇▇ 600.46
+Return on Investment ▇▇▇▇▇▇▇ 320.99
+ Average Order Value ▇▇▇ 125.12
+ Customer...on Score ▇▇ 90.54
+Average Time on Page ▇▇ 75.23
+     Conversion Rate ▇ 45.68
+         Bounce Rate ▇ 40.99
